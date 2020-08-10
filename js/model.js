@@ -9,10 +9,16 @@ const model = {
         { username: 'pål', name: 'Pål', password: '123' },
         { username: 'espen', name: 'Espen', password: '123', isAdmin: true },
     ],
+    inputs: {
+        createPoll: {
+            newAlternativeText: '',
+        },
+    },
     polls: [{
         id: 1,
         createdBy: 'espen',
         isOpen: true,
+        usersCanAddAlternatives: true,
         question: 'Hvem er den tøffeste læreren ved GET Academy?',
         options: ['Geir', 'Eskil', 'Terje'],
         votes: {
