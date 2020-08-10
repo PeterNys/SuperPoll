@@ -11,7 +11,8 @@ const model = {
     ],
     inputs: {
         createPoll: {
-            newAlternativeText: '',
+            newAlternative: '',
+            question: '',
         },
     },
     polls: [{
