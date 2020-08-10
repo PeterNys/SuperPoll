@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superpoll</title>
+    <script src="js/model.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <script>
+        updateView();
+
+        function updateView() {
+            const page = model.app.currentPage;
+            if (page === 'createVote') updateViewCreateVotePage();
+            else if (page === 'vote') updateViewVotePage();
+        }
+    </script>
+</body>
+
+</html>

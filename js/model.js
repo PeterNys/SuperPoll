@@ -2,7 +2,7 @@ const model = {
     app: {
         currentPoll: 1,
         loggedInUser: 'per',
-        currentPage:
+        currentPage: 'createVote'
     },
     users: [
         { username: 'per', name: 'Per', password: '123' },
