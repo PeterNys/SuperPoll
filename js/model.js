@@ -23,7 +23,7 @@ const model = {
 
     polls: [{
         id: 1,
-        createdBy: 'espen',
+        createdBy: 'per',
         isOpen: true,
         usersCanAddAlternatives: true,
         question: 'Hvem er den tøffeste læreren ved GET Academy?',
