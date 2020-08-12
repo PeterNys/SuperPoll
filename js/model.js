@@ -2,7 +2,7 @@ const model = {
     app: {
         currentPoll: 1,
         loggedInUser: 'per',
-        currentPage: 'createVote'
+        currentPage: 'createVote',
     },
     users: [
         { username: 'per', name: 'Per', password: '123' },
@@ -11,8 +11,11 @@ const model = {
     ],
     inputs: {
         createPoll: {
+            pollId: 1,
             newAlternative: '',
-            question: '',
+            question: 'Hvem er den tøffeste læreren ved GET Academy?',
+            options: ['Geir', 'Eskil', 'Terje'],
+            usersCanAddAlternatives: true,
         },
     },
     polls: [{
