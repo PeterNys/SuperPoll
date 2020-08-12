@@ -8,9 +8,16 @@
     <script src="js/model.js"></script>
     <script src="js/common.js"></script>
     <script src="js/createVotePageView.js"></script>
+    <script src="js/votePageView.js"></script>
+    <script src="js/votePageController.js"></script>
 </head>
 
 <body>
+    <div>
+        Meny:
+        <a href="javascript:changePage('vote')">stem</a>
+        <a href="javascript:changePage('createVote')">lag poll</a>
+    </div>
     <div id="app"></div>
 
     <script>
@@ -20,6 +27,11 @@
             const page = model.app.currentPage;
             if (page === 'createVote') updateViewCreateVotePage();
             else if (page === 'vote') updateViewVotePage();
+        }
+
+        function changePage(page) {
+            model.app.currentPage = page;
+            updateView();
         }
     </script>
 </body>

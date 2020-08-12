@@ -4,11 +4,13 @@ const model = {
         loggedInUser: 'per',
         currentPage: 'createVote',
     },
+
     users: [
         { username: 'per', name: 'Per', password: '123' },
         { username: 'pål', name: 'Pål', password: '123' },
         { username: 'espen', name: 'Espen', password: '123', isAdmin: true },
     ],
+
     inputs: {
         createPoll: {
             pollId: 1,
@@ -18,6 +20,7 @@ const model = {
             usersCanAddAlternatives: true,
         },
     },
+
     polls: [{
         id: 1,
         createdBy: 'espen',
@@ -26,7 +29,6 @@ const model = {
         question: 'Hvem er den tøffeste læreren ved GET Academy?',
         options: ['Geir', 'Eskil', 'Terje'],
         votes: {
-            per: 'Terje',
             pål: 'Terje',
             espen: 'Geir',
         }
