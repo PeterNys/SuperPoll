@@ -7,7 +7,8 @@
     <title>Superpoll</title>
     <script src="js/model.js"></script>
     <script src="js/common.js"></script>
-    <script src="js/createVotePageView.js"></script>
+    <script src="js/createPollPageView.js"></script>
+    <script src="js/createPollPageController.js"></script>
     <script src="js/votePageView.js"></script>
     <script src="js/votePageController.js"></script>
 </head>
@@ -25,7 +26,7 @@
 
         function updateView() {
             const page = model.app.currentPage;
-            if (page === 'createVote') updateViewCreateVotePage();
+            if (page === 'createPoll') updateViewCreateVotePage();
             else if (page === 'vote') updateViewVotePage();
         }
 

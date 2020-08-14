@@ -2,7 +2,7 @@ const model = {
     app: {
         currentPoll: 1,
         loggedInUser: 'per',
-        currentPage: 'createVote',
+        currentPage: 'createPoll',
     },
 
     users: [
@@ -13,7 +13,7 @@ const model = {
 
     inputs: {
         createPoll: {
-            pollId: 1,
+            pollId: null,
             newAlternative: '',
             question: 'Hvem er den tøffeste læreren ved GET Academy?',
             options: ['Geir', 'Eskil', 'Terje'],
@@ -21,18 +21,7 @@ const model = {
         },
     },
 
-    polls: [{
-        id: 1,
-        createdBy: 'per',
-        isOpen: true,
-        usersCanAddAlternatives: true,
-        question: 'Hvem er den tøffeste læreren ved GET Academy?',
-        options: ['Geir', 'Eskil', 'Terje'],
-        votes: {
-            pål: 'Terje',
-            espen: 'Geir',
-        }
-    }, ]
+    polls: [],
 };
 
 /*

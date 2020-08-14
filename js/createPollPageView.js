@@ -36,14 +36,15 @@ function updateViewCreateVotePage() {
         />
         <button>Legg til alternativ</button>
         <p>&nbsp;</p>
-        <button style="font-size: 150%">${buttonText} spørreundersøkelse</button>
+        <button onclick="createOrUpdatePoll()" style="font-size: 150%">${buttonText} spørreundersøkelse</button>
     
     `;
 }
 
 function createVotesHtml() {
     const counts = {};
-    const votesObj = getCurrentPoll().votes;
+    const currentPoll = getCurrentPoll();
+    const votesObj = currentPoll !== null ? currentPoll.votes : {};
     const votes = Object.values(votesObj);
     for (let vote of votes) {
         counts[vote] = (counts[vote] || 0) + 1;
