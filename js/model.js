@@ -21,7 +21,30 @@ const model = {
         },
     },
 
-    polls: [],
+    polls: 
+[
+    {
+        pollId: "1",
+        newAlternative: '',
+        question: 'Hvem er den tøffeste læreren ved GET Academy?',
+        options: ['Geir', 'Eskil', 'Terje'],
+        usersCanAddAlternatives: true,
+    },
+    {
+        pollId: "2",
+        newAlternative: '',
+        question: 'Hvem er den greieste læreren ved GET Academy?',
+        options: ['Per', 'Pål', 'Espen'],
+        usersCanAddAlternatives: true,
+    },
+    {
+        pollId: "6",
+        newAlternative: '',
+        question: 'Hvem er den smarteste læreren ved GET Academy?',
+        options: ['Peter', 'Mira', 'Elise'],
+        usersCanAddAlternatives: true,
+    }
+]
 };
 
 /*

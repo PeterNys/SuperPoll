@@ -1,3 +1,12 @@
+
+<!-- 
+Ta utgangspunkt i koden på  github.com/GetAcademy/SuperPoll
+1 Legg til en ny side som lister opp alle pollene som finnes - lag et eget menyvalg for å kunne gå til denne siden
+2 På denne nye siden, gjør det mulig å velge en av pollene - og når man velger, skal man sendes til siden for å endre/oppdatere den pollen. 
+3 (Det er ikke et krav at siden for å redigere en poll gjøres ferdig og virker)
+4 På siden for å oppdatere, skal da riktige verdier vises.
+5 Lag minst en unit test av controller-funksjonen som velger en poll og bytter side.  -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,13 +20,39 @@
     <script src="js/createPollPageController.js"></script>
     <script src="js/votePageView.js"></script>
     <script src="js/votePageController.js"></script>
+    <script src="js/pollListPageView.js"></script>
+    <script src="js/pollListPageController.js"></script>
+    <style>
+        table, tr, td, th {
+            border: 1px solid lightgray;
+            border-collapse: collapse;
+        }
+
+        td, th {
+            padding: 4px;
+            height: 5vh;
+        }
+
+        th {
+            background-color: darkblue;
+            border: 1px solid darkblue;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background: antiquewhite;
+        }
+        
+    
+    </style>
 </head>
 
 <body>
     <div>
         Meny:
-        <a href="javascript:changePage('vote')">stem</a>
-        <a href="javascript:changePage('createVote')">lag poll</a>
+        <a href="javascript:changePage('vote')">stem-</a>
+        <a href="javascript:changePage('createPoll')">lag poll-</a>
+        <a href="javascript:changePage('pollList')">alle polls</a>
     </div>
     <div id="app"></div>
 
@@ -28,7 +63,11 @@
             const page = model.app.currentPage;
             if (page === 'createPoll') updateViewCreateVotePage();
             else if (page === 'vote') updateViewVotePage();
+            else if (page === 'pollList') updateViewPollList();
         }
+        
+
+        
 
         function changePage(page) {
             model.app.currentPage = page;

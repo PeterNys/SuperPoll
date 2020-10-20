@@ -13,10 +13,19 @@
     <div id="qunit-fixture"></div>
     <script src="https://code.jquery.com/qunit/qunit-2.10.1.js"></script>
     <script src="js/createPollPageController.js"></script>
+    <script src="js/pollListPageController.js"></script>
+    <script src="js/model.js"></script>
+    
+    
     <script>
-        const model = {};
+        
 
         function updateView() {}
+
+        function changePage(page){
+                    model.app.currentPage = page;
+
+                    };   
 
         QUnit.module('createPollPage', function() {
 
@@ -48,10 +57,54 @@
                 assert.equal(model.inputs.createPoll.pollId !== null, true);
 
             });
-
+           
             QUnit.test('update poll', function(assert) {
-                assert.equal(1, 2);
+                // arrange
+                model.inputs = {
+                    createPoll: {
+                        pollId: null,
+                        question: 'Hvem er den tøffeste læreren ved GET Academy?',
+                        options: ['Geir', 'Eskil', 'Terje'],
+                        usersCanAddAlternatives: true,
+                    },
+                };
+                model.polls= 
+[
+    {
+        pollId: "1",
+        newAlternative: '',
+        question: 'Hvem er den tøffeste læreren ved GET Academy?',
+        options: ['Geir', 'Eskil', 'Terje'],
+        usersCanAddAlternatives: true,
+    },
+    {
+        pollId: "2",
+        newAlternative: '',
+        question: 'Hvem er den greieste læreren ved GET Academy?',
+        options: ['Per', 'Pål', 'Espen'],
+        usersCanAddAlternatives: true,
+    },
+    {
+        pollId: "6",
+        newAlternative: '',
+        question: 'Hvem er den smarteste læreren ved GET Academy?',
+        options: ['Peter', 'Mira', 'Elise'],
+        usersCanAddAlternatives: true,
+    }
+]
+
+                // act
+                selectPoll(2)
+
+                // assert
+                
+                
+                assert.deepEqual(model.inputs.createPoll, model.polls[2]);
+
+                assert.equal(model.app.currentPage,'createPoll' );
             });
+
+            
         });
     </script>
 </body>
